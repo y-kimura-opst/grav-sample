@@ -1,0 +1,20 @@
+name: Docker Build CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  webhook:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: webhook-docker-build
+        run: |
+          curl \
+            -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/y-kimura-opst/grav-sample-docker/actions/workflows/docker-image.yml/dispatches \
+            -d '{"ref":"main"}'

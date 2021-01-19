@@ -1,0 +1,6 @@
+cache/**
+vendor/**
+logs/**
+tmp/**
+user/account/**.yaml
+user/plugins

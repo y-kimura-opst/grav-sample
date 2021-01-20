@@ -3,4 +3,5 @@ vendor/**
 logs/**
 tmp/**
 user/account/**.yaml
-user/plugins
+user/plugins/**
+!user/plugins/**.sh
